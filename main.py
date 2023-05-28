@@ -83,7 +83,7 @@ def train():
         acc, adv_acc = evaluate(model, test_loader, device, args.epsilon, args.alpha, args.steps)
         radius = rob_radius(model, test_loader, device)
         print(ep, acc, adv_acc, radius)
-    torch.save(model.state_dict(), os.path.join(args.log_path, f'{args.train}.pt'))
+    torch.save(model.state_dict(), os.path.join(args.log_path, f'{args.train}.pth'))
 
 
 def phase_mark(phase, p, mark):
